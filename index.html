@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recensioni Slider</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <div v-for="(slide, index) in slides" :key="index" class="card">
+      <img :src="slide.immagine" alt="img" class="review-image">
+      <h2>{{ slide.titolo }}</h2>
+      <p>{{ slide.contenuto }}</p>
+      <div class="author-info">
+        <span>{{ slide.autoreNome }} {{ slide.autoreCognome }}</span>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
