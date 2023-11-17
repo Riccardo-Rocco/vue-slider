@@ -4,24 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recensioni Slider</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <div id="app">
-    <div v-for="(slide, index) in slides" :key="index" class="card">
-      <img :src="slide.immagine" alt="img" class="review-image">
-      <h2>{{ slide.titolo }}</h2>
-      <p>{{ slide.contenuto }}</p>
-      <div class="author-info">
-        <span>{{ slide.autoreNome }} {{ slide.autoreCognome }}</span>
+    <div class="slider-container">
+      <div class="slider">
+        <div v-if="currentSlide >= 0 && currentSlide < slides.length" class="card">
+          <img :src="slides[currentSlide].immagine" alt="Review Image" class="review-image">
+          <h2>{{ slides[currentSlide].titolo }}</h2>
+          <p>{{ slides[currentSlide].contenuto }}</p>
+          <div class="author-info">
+            <span>{{ slides[currentSlide].autoreNome }} {{ slides[currentSlide].autoreCognome }}</span>
+          </div>
+        </div>
       </div>
+      <div class="prev" @click="prevSlide">&#10094;</div>
+      <div class="next" @click="nextSlide">&#10095;</div>
     </div>
   </div>
 
-
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="script.js"></script>
-
 </body>
 </html>

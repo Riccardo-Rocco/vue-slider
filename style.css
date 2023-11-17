@@ -1,21 +1,46 @@
 
-    .card {
-      border: 1px solid #ddd;
-      padding: 20px;
-      margin: 10px;
-      text-align: left;
-      max-width: 400px;
-      margin: auto;
-      
-    }
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 400px;
+  margin: auto;
+}
 
-    .review-image {
-      width: 100%;
-      height: auto;
-    }
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
 
-    .author-info {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #888;
-    }
+.card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+.review-image {
+  width: 100%;
+  height: auto;
+}
+
+.author-info {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #888;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
